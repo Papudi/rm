@@ -24,7 +24,7 @@ export class HomePage {
   }
 
   gotoTrans() {
-    this.navCtrl.setRoot(TransactionsPage)
+    this.navCtrl.setRoot(TransactionsPage);
   }
 
   viewItem(item) {

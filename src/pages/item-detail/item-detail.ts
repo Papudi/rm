@@ -16,7 +16,7 @@ export class ItemDetailPage {
 
   program;
   points;
-  expDate;
+  expdate;
   created;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -25,10 +25,10 @@ export class ItemDetailPage {
   ionViewDidLoad() {
     this.program = this.navParams.get('item').program;
     this.points = this.navParams.get('item').points;
-    this.expDate = this.navParams.get('item').expData;
+    this.expdate = this.navParams.get('item').expdata;
     this.created = this.navParams.get('item').created;
 
-    console.log('ionViewDidLoad ItemDetailPage');
+    console.log(this.expdate);
   }
 
 }

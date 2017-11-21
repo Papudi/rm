@@ -15,12 +15,16 @@
 
 <ion-content padding>
   <ion-card>
-    <ion-card-content>
-        <h2>{{program}}</h2>
-      + {{points}} pts<br>
-      Expiry Date : {{expDate}}
-      <small>on {{created}}</small><br>
+    <!-- <ion-card-content> -->
+      <ion-item>
+        <h2>{{program}}<span item-right>+ {{points}} pts</span></h2>
+      <span class="pull-right"></span><br>
+      <!-- Expiry Date {{ expdate }}<br> -->
+    </ion-item>
+    <ion-item>
       
-    </ion-card-content>
+      <p>on {{created | date}}</p>
+    </ion-item>
+    <!-- </ion-card-content> -->
   </ion-card>
 </ion-content>

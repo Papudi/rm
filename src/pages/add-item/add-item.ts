@@ -18,18 +18,18 @@ export class AddItemPage {
 
   program : string;
   points : number;
-  expDate : string;
+  expdate : string;
   created : DateTime;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public view: ViewController) {
   }
 
   saveItem(){
-    console.log(this.expDate, this.program);
-    let newItem = {
+    console.log(this.expdate, this.program);
+    let newItem = { 
       program : this.program,
       points : this.points,
-      expDate : this.expDate,
+      expdate : this.expdate,
       created : new Date()
     };
     this.view.dismiss(newItem);
