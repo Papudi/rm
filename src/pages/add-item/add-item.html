@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>
+      Add Points
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <!-- <ion-item>
+      <ion-label floating>Rewards Program </ion-label>
+      <ion-input type="text" [(ngModel)]="program"></ion-input>
+    </ion-item> -->
+
+    <ion-item>
+      <ion-label>Rewards Program </ion-label>
+      <ion-select [(ngModel)]="program">
+        <ion-option value="Payback">Payback</ion-option>
+        <ion-option value="MakeMyTrip">MakeMyTrip</ion-option>
+        <ion-option value="ClearTrip">ClearTrip</ion-option>
+        <ion-option value="Trivago">Trivago</ion-option>
+        <ion-option value="Future Group">Future Group</ion-option>
+      </ion-select>
+    </ion-item>
+    <!-- <ion-grid>
+      <ion-row padding>
+        <ion-col col-4> -->
+          <ion-item>
+            <ion-label floating>Points</ion-label>
+            <ion-input type="text" [(ngModel)]="points"></ion-input>
+          </ion-item>
+        <!-- </ion-col>
+        <ion-col col-8> -->
+          <ion-item>
+            <ion-label>Expires on</ion-label>
+            <ion-datetime displayFormat="YYYY MMM DD" min="2017-11" max="2020-10" [(ngModel)]="expDate">
+            </ion-datetime>
+          </ion-item>
+        <!-- </ion-col>
+      </ion-row>
+    </ion-grid> -->
+  </ion-list>
+
+  <button full ion-button color="secondary" (click)="saveItem()">Save</button>
+
+</ion-content>
