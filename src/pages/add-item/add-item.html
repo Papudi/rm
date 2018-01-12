@@ -22,11 +22,12 @@
     <ion-item>
       <ion-label>Rewards Program </ion-label>
       <ion-select [(ngModel)]="program">
-        <ion-option value="Payback">Payback</ion-option>
+          <ion-option *ngFor="let key of myprograms">{{key.name}}</ion-option>
+        <!-- <ion-option value="Payback">Payback</ion-option>
         <ion-option value="MakeMyTrip">MakeMyTrip</ion-option>
         <ion-option value="ClearTrip">ClearTrip</ion-option>
         <ion-option value="Trivago">Trivago</ion-option>
-        <ion-option value="Future Group">Future Group</ion-option>
+        <ion-option value="Future Group">Future Group</ion-option> -->
       </ion-select>
     </ion-item>
     <!-- <ion-grid>

@@ -14,15 +14,30 @@
 
 
 <ion-content padding>
+
   <ion-card>
-    <!-- <ion-card-content> -->
-    <ion-item>
-      <h2>{{program}}
-        <span class="pull-right">+ {{points}} pts</span>
-      </h2>
-      <!-- <p>Expiry Date {{ expdate }}</p> -->
-      <p class="pull-right">on {{created | date}}</p>
-    </ion-item>
-    <!-- </ion-card-content> -->
+    <ion-card-header>
+      <h2>{{program}} 
+      <span class="pull-right">
+        <ion-badge color="secondary" >{{totalpoints}}</ion-badge> pts</span></h2>
+    </ion-card-header>
   </ion-card>
+
+  <ion-row>
+    <ion-col>
+      <h5>Transactions</h5>
+    </ion-col>
+  </ion-row>
+  <!-- <ion-item *ngFor="let itemf of itemsfilt"> -->
+  <ion-card *ngFor="let itemf of itemsfilt">
+    <ion-item>
+      <h2>{{itemf.created | date}}
+        <span class="pull-right">+ {{itemf.points}} pts</span>
+      </h2>
+      <p>
+        <span *ngIf="expdate" class="pull-right">validity {{itemf.expdate | date}}</span>
+      </p>
+    </ion-item>
+  </ion-card>
+
 </ion-content>

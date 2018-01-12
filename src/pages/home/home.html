@@ -7,47 +7,59 @@
   </ion-navbar>
 </ion-header>
 
-
-
 <ion-content>
-  <ion-card>
-    <img src="assets/imgs/Banner.jpg" />
-    <div class="card-title">Rewards Multiplier</div>
-    <div class="card-subtitle">never loose another reward</div>
-  </ion-card>
+<!-- THE HOME SCREEN SLIDER   -->
+
+  <ion-slides pager>
+    <ion-slide>
+      <img [src]="slides[0].image" />
+      <div class="card-title">Rewards Multiplier</div>
+      <div class="card-subtitle">never loose another reward</div>
+    </ion-slide>
+    <ion-slide>
+      <img [src]="slides[1].image"  />
+      <div class="card-title"></div>
+      <div class="card-subtitle"></div>
+    </ion-slide>
+  </ion-slides>
 
   <ion-grid>
     <ion-row padding>
       <ion-col col-6>
-        <button ion-button icon-start round block>
-          <ion-icon name="card" md="md-card"></ion-icon>
-          Program
-        </button>
+        <button ion-button icon-start round block (click)="gotoMyprograms()">
+          <ion-icon name="card" md="md-card"></ion-icon>Program</button>
       </ion-col>
       <ion-col col-6>
         <button ion-button icon-start round block (click)="gotoTrans()">
-          <ion-icon name="add-circle" md="md-add-circle"></ion-icon>
-          Add Points
-        </button>
+          <ion-icon name="add-circle" md="md-add-circle"></ion-icon>Add Points</button>
       </ion-col>
     </ion-row>
   </ion-grid>
+
   <ion-row padding>
     <ion-col col-12>
-      <h4>Most Recent Transactions</h4>
+      <h6>My Programs</h6>
     </ion-col>
     <ion-col col-12>
-    <ion-list class="homeRecent">
-      <ion-item *ngFor="let item of items | slice:0:5" (click)="viewItem(item)">{{item.program}}
-        <span class="pull-right">{{item.points}} pts</span>
-      </ion-item>
-    </ion-list>
+      <ion-list>
+        <ion-item *ngFor="let prog of myprogs" (click)="viewItem(prog.name)">{{prog.name}}
+          <!-- <span class="pull-right">{{prog.points}} pts</span> -->
+        </ion-item>
+      </ion-list>
     </ion-col>
-
   </ion-row>
 
+  <ion-row padding>
+    <ion-col col-12>
+      <h6>Recent Transactions</h6>
+    </ion-col>
+    <ion-col col-12>
+      <ion-list class="homeRecent">
+        <ion-item *ngFor="let item of items | slice:0:5" (click)="viewItem(item)">{{item.program}}
+          <span class="pull-right">{{item.points}} pts</span>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
 
-  <!-- <h3>Ionic Menu Starter</h3>
-  <p> If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way. </p>
-  <button ion-button secondary menuToggle>Toggle Menu</button> -->
 </ion-content>

@@ -1,6 +1,6 @@
 {
   "name": "rmi05",
-  "app_id": "",
+  "app_id": "3c7f0539",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

@@ -6,6 +6,9 @@ import { AddItemPage } from '../add-item/add-item';
 import { ItemDetailPage } from '../item-detail/item-detail';
 import { Data } from '../../providers/data';
 
+// import { Moment } from 'moment';
+
+
 /**
  * Generated class for the TransactionsPage page.
  *
@@ -27,7 +30,7 @@ export class TransactionsPage {
         this.items = JSON.parse(trans);
       }
     });
-  }
+  } 
 
   ionViewDidLoad() {
   }
@@ -49,7 +52,8 @@ export class TransactionsPage {
 
   viewItem(item) {
     this.navCtrl.push(ItemDetailPage, {
-      item: item
+      item: item,
+      items: this.items
     });
   }
 

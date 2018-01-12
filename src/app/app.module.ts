@@ -3,10 +3,16 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { IonicStorageModule } from '@ionic/storage';
 
+// import {MomentModule} from 'angular2-moment';
+// import * as moment from 'moment';
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { ProgramsPage } from '../pages/programs/programs';
+import { MyprogramsPage } from '../pages/myprograms/myprograms';
+import { ProgramAddPage } from '../pages/program-add/program-add';
+import { ProgramDetailPage } from '../pages/program-detail/program-detail';
+// import { ProgramsPage } from '../pages/programs/programs';
 import { TransactionsPage } from '../pages/transactions/transactions';
 import { AddItemPage } from '../pages/add-item/add-item';
 import { ItemDetailPage } from '../pages/item-detail/item-detail';
@@ -20,7 +26,10 @@ import { Data } from '../providers/data';
     MyApp,
     HomePage,
     ListPage,
-    ProgramsPage,
+    MyprogramsPage,
+    ProgramAddPage,
+    ProgramDetailPage,
+    // ProgramsPage,
     TransactionsPage,
     AddItemPage,
     ItemDetailPage
@@ -29,13 +38,17 @@ import { Data } from '../providers/data';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
+    // MomentModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     ListPage,
-    ProgramsPage,
+    MyprogramsPage,
+    ProgramAddPage,
+    ProgramDetailPage,
+    // ProgramsPage,
     TransactionsPage,
     AddItemPage,
     ItemDetailPage
