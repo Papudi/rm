@@ -17,7 +17,8 @@ export class ProgtransDetailPage {
   prog;
   program;
   points;
-  expdate;
+  memid;
+  // expdate;
   created;
   items;
   itemsfilt;
@@ -28,20 +29,21 @@ export class ProgtransDetailPage {
   }
 
   ionViewDidLoad() {
-    this.program = this.navParams.get('item').program;
+    this.program = this.navParams.get('prog').name;
+    this.memid = this.navParams.get('prog').membershipid;
     // this.points = this.navParams.get('item').points;
     // this.expdate = this.navParams.get('item').expdate;
     // this.created = this.navParams.get('item').created;
 
-    this.items = this.navParams.get('items');
+    this.itemsfilt = this.navParams.get('item');
 
     this.prog = this.navParams.get('prog');
 
     // console.log(this.navParams.get('item'));
-    console.log(this.navParams.get('items'));
-    console.log(this.prog);
+    // console.log(this.navParams.get('item'));
+    // console.log(this.prog);
 
-    this.itemsfilt = this.items.filter(item => item.program == this.prog.name);
+    // this.itemsfilt = this.items.filter(item => item.program == this.prog.name);
     this.totalpoints = this.itemsfilt.reduce((total, prog) => total + Number(prog.points), 0);
 
     // console.log(this.totalpoints);

@@ -27,7 +27,7 @@ export class ItemDetailPage {
   }
 
   ionViewDidLoad() {
-    this.program = this.navParams.get('item').program;
+    this.program = this.navParams.get('item').program; 
     // this.points = this.navParams.get('item').points;
     // this.expdate = this.navParams.get('item').expdate;
     // this.created = this.navParams.get('item').created;

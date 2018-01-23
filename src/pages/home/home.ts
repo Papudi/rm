@@ -49,6 +49,11 @@ export class HomePage {
     this.dataService.getMyprograms().then((myprograms) => {
       if (myprograms) {
         this.myprogs = JSON.parse(myprograms);
+        // console.log(this.myprogs);
+        for (let progs of this.myprogs) {
+          // this.myprogs.push({'totalpts' : 10});
+          // this.totalpoints = this.itemsfilt.reduce((total, prog) => total + Number(prog.points), 0);
+        }
       }
     });
 
@@ -64,6 +69,7 @@ export class HomePage {
     this.navCtrl.setRoot(TransactionsPage);
   }
 
+
   viewItem(item) {
     this.navCtrl.push(ItemDetailPage, {
       item: item,
@@ -71,22 +77,13 @@ export class HomePage {
     });
   }
 
-  viewProg(progName) {
-    // console.log(progName);
-    let prog = this.myprogs.filter(element => element.name == progName);
-    let item = this.items.filter(element => element.program == progName);
-    // item = JSON.parse(item);
-    // console.log(progName);
+  viewProg(prog) {
+    // console.log(prog);
+    let item = this.items.filter(element => element.program == prog.name);
     this.navCtrl.push(ProgtransDetailPage, {
-      prog: progName,
+      prog: prog,
       item: item,
-      items: this.items
     });
-
-    // this.navCtrl.push(ProgSummaryPage, {
-    //   prog: prog,
-    //   transacts: this.items
-    // });
   }
 
 

@@ -48,8 +48,8 @@ export class Data {
   }
 
   getMyprogramsSummary() {
-    let myProgs = this.storage.get('myprograms');
-    let trans = this.storage.get('trans');
+    // let myProgs = this.storage.get('myprograms');
+    // let trans = this.storage.get('trans');
   }
 
   saveMyprograms(programsData) {
