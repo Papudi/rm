@@ -16,6 +16,7 @@ import { ProgramDetailPage } from '../pages/program-detail/program-detail';
 import { TransactionsPage } from '../pages/transactions/transactions';
 import { AddItemPage } from '../pages/add-item/add-item';
 import { ItemDetailPage } from '../pages/item-detail/item-detail';
+import { ProgtransDetailPage } from '../pages/progtrans-detail/progtrans-detail';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -32,7 +33,8 @@ import { Data } from '../providers/data';
     // ProgramsPage,
     TransactionsPage,
     AddItemPage,
-    ItemDetailPage
+    ItemDetailPage,
+    ProgtransDetailPage,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,8 @@ import { Data } from '../providers/data';
     // ProgramsPage,
     TransactionsPage,
     AddItemPage,
-    ItemDetailPage
+    ItemDetailPage,
+    ProgtransDetailPage,
   ],
   providers: [
     StatusBar,
