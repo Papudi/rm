@@ -3,8 +3,9 @@ import { ModalController, NavController } from 'ionic-angular';
 // import { AddItemPage } from '../add-item/add-item';
 import { TransactionsPage } from '../transactions/transactions';
 import { ItemDetailPage } from '../item-detail/item-detail';
-import { Data } from '../../providers/data';
+import { ProgtransDetailPage } from '../progtrans-detail/progtrans-detail';
 import { MyprogramsPage } from '../myprograms/myprograms';
+import { Data } from '../../providers/data';
 
 import 'rxjs/add/operator/filter';
 
@@ -19,6 +20,7 @@ export class HomePage {
   // myprogpts: any;
   // myprogsfilt: any;
   name: any;
+  prog: any;
 
   public myprogs = [];
 
@@ -69,7 +71,18 @@ export class HomePage {
     });
   }
 
-  viewProgSummary(prog) {
+  viewProg(progName) {
+    // console.log(progName);
+    let prog = this.myprogs.filter(element => element.name == progName);
+    let item = this.items.filter(element => element.program == progName);
+    // item = JSON.parse(item);
+    // console.log(progName);
+    this.navCtrl.push(ProgtransDetailPage, {
+      prog: progName,
+      item: item,
+      items: this.items
+    });
+
     // this.navCtrl.push(ProgSummaryPage, {
     //   prog: prog,
     //   transacts: this.items

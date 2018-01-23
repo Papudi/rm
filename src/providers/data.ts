@@ -41,10 +41,15 @@ export class Data {
     // });
   }
 
-  // GET and SAVE Transactions in trans table
+  // GET and SAVE Programs in myprograms collection
 
   getMyprograms() {
     return this.storage.get('myprograms');
+  }
+
+  getMyprogramsSummary() {
+    let myProgs = this.storage.get('myprograms');
+    let trans = this.storage.get('trans');
   }
 
   saveMyprograms(programsData) {

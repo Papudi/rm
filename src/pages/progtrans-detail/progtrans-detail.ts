@@ -9,11 +9,12 @@ import { NavController, NavParams } from 'ionic-angular';
  */
 
 @Component({
-  selector: 'page-item-detail',
-  templateUrl: 'item-detail.html',
+  selector: 'page-progtrans-detail',
+  templateUrl: 'progtrans-detail.html',
 })
-export class ItemDetailPage {
+export class ProgtransDetailPage {
 
+  prog;
   program;
   points;
   expdate;
@@ -34,9 +35,13 @@ export class ItemDetailPage {
 
     this.items = this.navParams.get('items');
 
-    console.log( this.program);
+    this.prog = this.navParams.get('prog');
 
-    this.itemsfilt = this.items.filter(item => item.program == this.program);
+    // console.log(this.navParams.get('item'));
+    console.log(this.navParams.get('items'));
+    console.log(this.prog);
+
+    this.itemsfilt = this.items.filter(item => item.program == this.prog.name);
     this.totalpoints = this.itemsfilt.reduce((total, prog) => total + Number(prog.points), 0);
 
     // console.log(this.totalpoints);
