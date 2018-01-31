@@ -4,7 +4,10 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      <img src="assets/imgs/logo_320x120.png" height="16px" /> Rewards Multiplier</ion-title>
+      <img src="assets/imgs/logo_320x120.png" height="16px" /> Rewards Multiplier
+      <ion-icon class="help-icon" name="help-circle" (click)="showHelp()"></ion-icon>
+    </ion-title>
+
   </ion-navbar>
 </ion-header>
 
@@ -24,6 +27,8 @@
     </ion-slide>
   </ion-slides>
 
+  <!-- Buttons for Program and Add Point -->
+
   <ion-grid>
     <ion-row padding>
       <ion-col col-6>
@@ -37,22 +42,28 @@
     </ion-row>
   </ion-grid>
 
+  <!-- List Programs enrolled -->
+
   <ion-row padding>
     <ion-col col-12>
       <h6>My Programs</h6>
     </ion-col>
     <ion-col col-12>
       <ion-list>
-        <div class="placeholder" id="alert-msg" *ngIf="!myprogs">
+        <div class="placeholder" id="alert-msg" *ngIf="!myprogs.length">
           <div>
-            <p>Looks like you have not added any Programs yet !</p>
+            Looks like you have not added any Programs yet!
+            <br> Get started,
+            <b>add programs</b> earned now!
           </div>
         </div>
-        <!-- <ion-item *ngFor="let prog of myprogs" (click)="viewProg(prog)">{{prog.name}}
-        </ion-item> -->
+        <ion-item *ngFor="let prog of myprogs" (click)="viewProg(prog)">{{prog.name}}
+        </ion-item>
       </ion-list>
     </ion-col>
   </ion-row>
+
+  <!-- List Last 5 Transactions -->
 
   <ion-row padding>
     <ion-col col-12>
@@ -60,6 +71,13 @@
     </ion-col>
     <ion-col col-12>
       <ion-list class="homeRecent">
+        <div class="placeholder" id="alert-msg" *ngIf="!items">
+          <div>
+            Looks like you have not added any Transactions yet!
+            <br> Get started,
+            <b>add reward points</b> earned now!
+          </div>
+        </div>
         <ion-item *ngFor="let item of items | slice:0:5" (click)="viewItem(item)">{{item.program}}
           <span class="pull-right">{{item.points}} pts</span>
         </ion-item>
@@ -68,3 +86,20 @@
   </ion-row>
 
 </ion-content>
+
+<!-- The Intro Overlays -->
+
+<div class="my-overlay" padding [hidden]="overlayHidden " id="help1">
+  <img class="help help1" src="../assets/imgs/help1.png" />
+  <button class="next-btn" full (click)="myFunction1()">Next</button>
+</div>
+
+<div class="my-overlay" padding [hidden]="overlayHidden " id="help2" style="display:none;">
+  <img class="help help2" src="../assets/imgs/help2.png" />
+  <button class="next-btn" full (click)="myFunction2()">Next</button>
+</div>
+
+<div class="my-overlay" padding [hidden]="overlayHidden " id="help3" style="display:none;">
+  <img class="help help3" src="../assets/imgs/help3.png" />
+  <button class="next-btn" full (click)="myFunction3()">Close</button>
+</div>

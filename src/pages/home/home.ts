@@ -59,6 +59,41 @@ export class HomePage {
 
   }
 
+  // Intro Overlays
+
+  ionViewDidLoad() {
+    document.getElementById("help1").style.display="none";
+    document.getElementById("help2").style.display="none";
+    document.getElementById("help3").style.display="none";  	
+  }
+
+  showHelp(){
+    console.log("Help?")
+    document.getElementById("help1").style.display="block";
+  }
+
+  myFunction1() {
+    document.getElementById("help1").style.display="none";
+    document.getElementById("help2").style.display="block";
+    document.getElementById("help3").style.display="none";
+  
+  }
+
+  myFunction2() {
+  document.getElementById("help1").style.display="none";
+  document.getElementById("help2").style.display="none";
+  document.getElementById("help3").style.display="block";
+
+} 
+
+myFunction3() {
+  document.getElementById("help1").style.display="none";
+  document.getElementById("help2").style.display="none";
+  document.getElementById("help3").style.display="none";
+
+}
+
+
   // Navigation Buttons
 
   gotoMyprograms() {
