@@ -3,12 +3,13 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title><img src="assets/imgs/logo_320x120.png" height="16px" /> Rewards Multiplier</ion-title>
+    <ion-title>
+      <img src="assets/imgs/logo_320x120.png" height="16px" /> Rewards Multiplier</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-<!-- THE HOME SCREEN SLIDER   -->
+  <!-- THE HOME SCREEN SLIDER   -->
 
   <ion-slides pager>
     <ion-slide>
@@ -17,7 +18,7 @@
       <div class="card-subtitle">never loose another reward</div>
     </ion-slide>
     <ion-slide>
-      <img [src]="slides[1].image"  />
+      <img [src]="slides[1].image" />
       <div class="card-title"></div>
       <div class="card-subtitle"></div>
     </ion-slide>
@@ -42,9 +43,13 @@
     </ion-col>
     <ion-col col-12>
       <ion-list>
-        <ion-item *ngFor="let prog of myprogs" (click)="viewProg(prog)">{{prog.name}}
-          <!-- <span class="pull-right">{{prog.points}} pts</span> -->
-        </ion-item>
+        <div class="placeholder" id="alert-msg" *ngIf="!myprogs">
+          <div>
+            <p>Looks like you have not added any Programs yet !</p>
+          </div>
+        </div>
+        <!-- <ion-item *ngFor="let prog of myprogs" (click)="viewProg(prog)">{{prog.name}}
+        </ion-item> -->
       </ion-list>
     </ion-col>
   </ion-row>

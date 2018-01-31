@@ -28,7 +28,7 @@ export class HomePage {
     {
       title: "Rewards Multiplier",
       description: "never miss another reward",
-      image: "assets/imgs/Banner.jpg",
+      image: "assets/imgs/Banner1.jpg",
     },
     {
       title: "",

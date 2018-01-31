@@ -1,27 +1,23 @@
 page-home {
-
-  ion-slides {
-    width: 100%;
-    padding: 0;
-    height: 36%;
-  }
-
-  ion-slides .swiper-pagination-bullet-active {
-    background: #fff;
-  }
-
-  ion-card {
+    ion-slides {
+        width: 100%;
+        padding: 0;
+        height: 36%;
+    }
+    ion-slides .swiper-pagination-bullet-active {
+        background: #fff;
+    }
+    ion-card {
         position: relative;
         text-align: center;
-      }
-      ion-icon {
+    }
+    ion-icon {
         clear: both;
-      }
-      ion-button round {
+    }
+    ion-button round {
         padding: 2em;
-      }
-    
-      .card-title {
+    }
+    .card-title {
         position: absolute;
         top: 36%;
         width: 100%;
@@ -29,20 +25,28 @@ page-home {
         font-weight: bold;
         line-height: 1em;
         color: #fff;
-      }
-    
-      .card-subtitle {
+    }
+    .card-subtitle {
         font-size: 0.9em;
         position: absolute;
         top: 50%;
         width: 100%;
         color: #fff;
-      }
-      .pull-right {
+    }
+    .pull-right {
         float: right;
     }
     .homeRecent ion-item {
-      font-size: 1em;
+        font-size: 1em;
     }
-      
+
+    .placeholder{
+      background: url('../assets/imgs/bg-logo.png');
+      background-size: 50% auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      text-align: center;
+      min-height: 90px;
+    }
+
 }
