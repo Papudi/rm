@@ -18,17 +18,28 @@ export class ItemDetailPage {
   points;
   expdate;
   created;
+  items;
+  itemsfilt;
+  totalpoints;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
   }
 
   ionViewDidLoad() {
-    this.program = this.navParams.get('item').program;
-    this.points = this.navParams.get('item').points;
-    this.expdate = this.navParams.get('item').expdata;
-    this.created = this.navParams.get('item').created;
+    this.program = this.navParams.get('item').program; 
+    // this.points = this.navParams.get('item').points;
+    // this.expdate = this.navParams.get('item').expdate;
+    // this.created = this.navParams.get('item').created;
 
-    console.log(this.expdate);
+    this.items = this.navParams.get('items');
+
+    console.log( this.program);
+
+    this.itemsfilt = this.items.filter(item => item.program == this.program);
+    this.totalpoints = this.itemsfilt.reduce((total, prog) => total + Number(prog.points), 0);
+
+    // console.log(this.totalpoints);
   }
 
 }

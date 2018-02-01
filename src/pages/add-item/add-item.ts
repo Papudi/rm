@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ViewController } from 'ionic-angular/navigation/view-controller';
 import { DateTime } from 'ionic-angular/components/datetime/datetime';
+import { Data } from '../../providers/data';
 
 /**
  * Generated class for the AddItemPage page.
@@ -21,7 +22,14 @@ export class AddItemPage {
   expdate : string;
   created : DateTime;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public view: ViewController) {
+  public myprograms = [];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public view: ViewController, public dataService: Data) {
+    this.dataService.getMyprograms().then((myprograms) => {
+      if (myprograms) {
+        this.myprograms = JSON.parse(myprograms);
+      }
+    });
   }
 
   saveItem(){

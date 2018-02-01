@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>
+      Add Program
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngIf=" nametemp != 'Other'">
+      <ion-label floating>Rewards Program </ion-label>
+      <ion-select [(ngModel)]="nametemp">
+        <ion-option *ngFor="let program of masterprograms" value={{program.name}}>{{program.name}}</ion-option>
+      </ion-select>
+      <!-- <ion-input type="text" [(ngModel)]="program"></ion-input> -->
+    </ion-item>
+    <div *ngIf=" nametemp == '' || nametemp == 'Other'">
+      <ion-item>
+        <ion-label floating>Program Name</ion-label>
+        <ion-input type="text" [(ngModel)]="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Category</ion-label>
+        <ion-select [(ngModel)]="category">
+          <ion-option *ngFor="let category of mastercategories" value={{category.name}}>{{category.name}}</ion-option>
+        </ion-select>
+        <!-- <ion-input type="text" [(ngModel)]="category"></ion-input> -->
+      </ion-item>
+      <ion-item>
+        <ion-label>Default Validity (in days)</ion-label>
+        <ion-input type="number" [(ngModel)]="stdvalidity"></ion-input>
+      </ion-item>
+    </div>
+    <ion-item>
+      <ion-label floating>Membership ID / Card Number</ion-label>
+      <ion-input type="text" [(ngModel)]="membershipid"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <button full ion-button color="secondary" (click)="saveProgram()">Save</button>
+
+</ion-content>

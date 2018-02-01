@@ -3,51 +3,103 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Rewards Multiplier</ion-title>
+    <ion-title>
+      <img src="assets/imgs/logo_320x120.png" height="16px" /> Rewards Multiplier
+      <ion-icon class="help-icon" name="help-circle" (click)="showHelp()"></ion-icon>
+    </ion-title>
+
   </ion-navbar>
 </ion-header>
 
-
-
 <ion-content>
-  <ion-card>
-    <img src="assets/imgs/Banner.jpg" />
-    <div class="card-title">Rewards Multiplier</div>
-    <div class="card-subtitle">never loose another reward</div>
-  </ion-card>
+  <!-- THE HOME SCREEN SLIDER   -->
+
+  <ion-slides pager>
+    <ion-slide>
+      <img [src]="slides[0].image" />
+      <div class="card-title">Rewards Multiplier</div>
+      <div class="card-subtitle">never loose another reward</div>
+    </ion-slide>
+    <ion-slide>
+      <img [src]="slides[1].image" />
+      <div class="card-title"></div>
+      <div class="card-subtitle"></div>
+    </ion-slide>
+  </ion-slides>
+
+  <!-- Buttons for Program and Add Point -->
 
   <ion-grid>
     <ion-row padding>
       <ion-col col-6>
-        <button ion-button icon-start round block>
-          <ion-icon name="card" md="md-card"></ion-icon>
-          Program
-        </button>
+        <button ion-button icon-start round block (click)="gotoMyprograms()">
+          <ion-icon name="card" md="md-card"></ion-icon>Program</button>
       </ion-col>
       <ion-col col-6>
         <button ion-button icon-start round block (click)="gotoTrans()">
-          <ion-icon name="add-circle" md="md-add-circle"></ion-icon>
-          Add Points
-        </button>
+          <ion-icon name="add-circle" md="md-add-circle"></ion-icon>Add Points</button>
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  <!-- List Programs enrolled -->
+
   <ion-row padding>
     <ion-col col-12>
-      <h4>Most Recent Transactions</h4>
+      <h6>My Programs</h6>
     </ion-col>
     <ion-col col-12>
-    <ion-list class="homeRecent">
-      <ion-item *ngFor="let item of items | slice:0:5" (click)="viewItem(item)">{{item.program}}
-        <span class="pull-right">{{item.points}} pts</span>
-      </ion-item>
-    </ion-list>
+      <ion-list>
+        <div class="placeholder" id="alert-msg" *ngIf="!myprogs.length">
+          <div>
+            Looks like you have not added any Programs yet!
+            <br> Get started,
+            <b>add programs</b> earned now!
+          </div>
+        </div>
+        <ion-item *ngFor="let prog of myprogs" (click)="viewProg(prog)">{{prog.name}}
+        </ion-item>
+      </ion-list>
     </ion-col>
-
   </ion-row>
 
+  <!-- List Last 5 Transactions -->
 
-  <!-- <h3>Ionic Menu Starter</h3>
-  <p> If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way. </p>
-  <button ion-button secondary menuToggle>Toggle Menu</button> -->
+  <ion-row padding>
+    <ion-col col-12>
+      <h6>Recent Transactions </h6>
+    </ion-col>
+    <ion-col col-12>
+      <ion-list class="homeRecent">
+        <div class="placeholder" id="alert-msg" *ngIf="!items">
+          <div>
+            Looks like you have not added any Transactions yet!
+            <br> Get started,
+            <b>add reward points</b> earned now!
+          </div>
+        </div>
+        <ion-item *ngFor="let item of items | slice:0:5" (click)="viewItem(item)">{{item.program}}
+          <span class="pull-right">{{item.points}} pts</span>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+
 </ion-content>
+
+<!-- The Intro Overlays -->
+
+<div class="my-overlay" padding [hidden]="overlayHidden " id="help1">
+  <img class="help help1" src="../assets/imgs/help1.png" />
+  <button class="next-btn" full (click)="myFunction1()">Next</button>
+</div>
+
+<div class="my-overlay" padding [hidden]="overlayHidden " id="help2" style="display:none;">
+  <img class="help help2" src="../assets/imgs/help2.png" />
+  <button class="next-btn" full (click)="myFunction2()">Next</button>
+</div>
+
+<div class="my-overlay" padding [hidden]="overlayHidden " id="help3" style="display:none;">
+  <img class="help help3" src="../assets/imgs/help3.png" />
+  <button class="next-btn" full (click)="myFunction3()">Close</button>
+</div>

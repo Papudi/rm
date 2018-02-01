@@ -14,3 +14,23 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.pull-right {
+    float: right;
+}
+.pull-left {
+    float: left;
+}
+.small-grey {
+    color: grey;
+    font-size: 1.2em;
+}
+
+ion-content {
+    max-width: 780px;
+    // align-content: center;
+}
+
+h2 {
+    font-size: 1.3em;
+}

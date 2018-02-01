@@ -5,6 +5,11 @@ import { ModalController, NavController, NavParams } from 'ionic-angular';
 import { AddItemPage } from '../add-item/add-item';
 import { ItemDetailPage } from '../item-detail/item-detail';
 import { Data } from '../../providers/data';
+import { AlertController } from 'ionic-angular';
+// import { removeArrayItem } from 'ionic-angular/util/util';
+
+// import { Moment } from 'moment';
+
 
 /**
  * Generated class for the TransactionsPage page.
@@ -21,13 +26,13 @@ export class TransactionsPage {
 
   public items = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public dataService: Data) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public dataService: Data, public alertCtrl: AlertController) {
     this.dataService.getTransactions().then((trans) => {
       if (trans) {
         this.items = JSON.parse(trans);
       }
     });
-  }
+  } 
 
   ionViewDidLoad() {
   }
@@ -49,8 +54,38 @@ export class TransactionsPage {
 
   viewItem(item) {
     this.navCtrl.push(ItemDetailPage, {
-      item: item
+      item: item,
+      items: this.items
     });
+  }
+  deleteItem(item) {
+
+      let confirm = this.alertCtrl.create({
+        title: 'Delete Transaction?',
+        message: 'Do you really want to Delete this transaction?',
+        buttons: [
+          {
+            text: 'No',
+            handler: () => {
+              console.log('Disagree clicked');
+            }
+          },
+          {
+            text: 'Yes',
+            handler: () => {
+              this.items.splice(this.items.indexOf(item),1);
+              this.dataService.save(this.items);
+            }
+          }
+        ]
+      });
+      confirm.present();
+
+
+
+
+    // this.items.splice(this.items.indexOf(item),1);
+    // this.dataService.save(this.items);
   }
 
 

@@ -1,34 +1,106 @@
 page-home {
-
+    ion-slides {
+        width: 100%;
+        padding: 0;
+        height: 36%;
+    }
+    ion-slides .swiper-pagination-bullet-active {
+        background: #fff;
+    }
     ion-card {
         position: relative;
         text-align: center;
-      }
-      ion-icon {
+    }
+    ion-icon {
         clear: both;
-      }
-    
-      .card-title {
+    }
+    ion-button round {
+        padding: 2em;
+    }
+    .card-title {
         position: absolute;
         top: 36%;
-        font-size: 2.0em;
         width: 100%;
+        font-size: 1.7em;
         font-weight: bold;
+        line-height: 1em;
         color: #fff;
-      }
-    
-      .card-subtitle {
-        font-size: 1.0em;
+    }
+    .card-subtitle {
+        font-size: 0.9em;
         position: absolute;
-        top: 48%;
+        top: 50%;
         width: 100%;
         color: #fff;
-      }
-      .pull-right {
+    }
+    .pull-right {
         float: right;
     }
     .homeRecent ion-item {
-      font-size: 1em;
+        font-size: 1em;
     }
-      
+
+    .placeholder{
+      background: url('../assets/imgs/bg-logo.png');
+      background-size: 50% auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      text-align: center;
+      min-height: 90px;
+      font-size: 1.2em;
+      color: orangered;
+      padding-top: 1.5em;
+    }
+
+    .help-icon{
+      float: right;
+      // color: orangered;
+    }
+    .help-icon:hover{
+      cursor: pointer;
+    }    
+
+    .help1{
+      margin-top:15px;
+      margin-left: 5px;
+    }
+    .help2{
+      margin-top: 90px;
+    }
+    .help3{
+      margin-top: 90px;
+      float: right;
+    }
+
+    .my-overlay {
+      position: fixed;
+      width: 100%;
+      max-width: 780px;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 20;
+      top: 0;
+      left: 0;
+    }
+
+    .next-btn{
+      width: 50%;
+      padding: 10px 20px;
+      color: #fff;
+      border: 2px solid #fff;
+      font-size: 20px;
+      background: transparent;
+      position: fixed;
+      bottom: 0;
+      margin-bottom: 20px;
+      margin-left: 5%;
+      left: 0;
+      transition: all ease-in-out 0.5s;
+    }
+    .next-btn:hover{
+      background: #fff;
+      color: #000;
+    }
+
+
 }
