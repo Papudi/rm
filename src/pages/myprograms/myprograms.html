@@ -9,7 +9,11 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>My Programs</ion-title>
+    <ion-title>
+      <div class="logo">
+        <img src="assets/imgs/rm-logo.png" width ="26px"height="23px" item-start/> My Programs
+      </div>
+    </ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="addMyprogram()">
         <ion-icon name="add-circle"></ion-icon> 
@@ -22,8 +26,9 @@
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let prog of myprograms">
-      <div><span class="pull-right">- <small class="grey">{{prog.category}}</small></span>{{prog.name}}</div>
+      <div><span class="pull-right" (click)="viewProgramDetails(prog)">- <small class="grey">{{prog.category}}</small></span>{{prog.name}}</div>
       <div><p>{{prog.membershipid}}</p></div>
+      <ion-icon item-end name="trash" (click)="deleteItem(item)"></ion-icon>
       </ion-item>
   </ion-list>
 </ion-content>

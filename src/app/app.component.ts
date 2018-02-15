@@ -8,6 +8,11 @@ import { HomePage } from '../pages/home/home';
 // import { ListPage } from '../pages/list/list';
 import { TransactionsPage } from '../pages/transactions/transactions';
 import { MyprogramsPage } from '../pages/myprograms/myprograms';
+import { AboutPage } from '../pages/about/about';
+import { RegistrationPage } from '../pages/registration/registration';
+import { ProfilePage } from '../pages/profile/profile';
+import { ProfileDetailPage } from '../pages/profile-detail/profile-detail';
+// import { KnowyoumorePage } from '../pages/knowyoumore/knowyoumore';
 // import { ProgramsPage } from '../pages/programs/programs';
 
 @Component({
@@ -28,7 +33,11 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'My Programs', component: MyprogramsPage },
       // { title: 'Programs', component: ProgramsPage },
-      { title: 'My Transactions', component: TransactionsPage }
+      { title: 'My Transactions', component: TransactionsPage },
+      { title: 'About', component: AboutPage },
+      { title: 'Registration', component: RegistrationPage },
+      { title: 'Profile', component: ProfilePage },
+      { title: 'Profile Details', component: ProfileDetailPage }      
     ];
 
   }

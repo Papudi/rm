@@ -21,6 +21,11 @@ import { ProgtransDetailPage } from '../pages/progtrans-detail/progtrans-detail'
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Data } from '../providers/data';
+import { AboutPage } from '../pages/about/about';
+import { RegistrationPage } from '../pages/registration/registration';
+import { ProfilePage } from '../pages/profile/profile';
+import { ProfileDetailPage } from '../pages/profile-detail/profile-detail';
+// import { KnowyoumorePage } from '../pages/knowyoumore/knowyoumore';
 
 @NgModule({
   declarations: [
@@ -35,6 +40,10 @@ import { Data } from '../providers/data';
     AddItemPage,
     ItemDetailPage,
     ProgtransDetailPage,
+    AboutPage,
+    RegistrationPage,
+    ProfilePage,
+    ProfileDetailPage
   ],
   imports: [
     BrowserModule,
@@ -55,6 +64,10 @@ import { Data } from '../providers/data';
     AddItemPage,
     ItemDetailPage,
     ProgtransDetailPage,
+    AboutPage,
+    RegistrationPage,
+    ProfilePage,
+    ProfileDetailPage
   ],
   providers: [
     StatusBar,

@@ -6,8 +6,12 @@ import { ItemDetailPage } from '../item-detail/item-detail';
 import { ProgtransDetailPage } from '../progtrans-detail/progtrans-detail';
 import { MyprogramsPage } from '../myprograms/myprograms';
 import { Data } from '../../providers/data';
+import { RegistrationPage } from '../registration/registration';
+import { AboutPage } from '../about/about';
+import { ProfilePage } from '../profile/profile';
 
 import 'rxjs/add/operator/filter';
+// import { KnowyoumorePage } from '../knowyoumore/knowyoumore';
 
 @Component({
   selector: 'page-home',
@@ -104,7 +108,22 @@ myFunction3() {
     this.navCtrl.setRoot(TransactionsPage);
   }
 
+  gotoAbout(){
+    this.navCtrl.setRoot(AboutPage);
+  }
 
+  gotoRegistration(){
+    this.navCtrl.setRoot(RegistrationPage);
+  }
+
+  gotoProfile(){
+    this.navCtrl.setRoot(ProfilePage);
+  }
+
+  // gotoKnowyoumore(){
+  //   this.navCtrl.setRoot(KnowyoumorePage);
+  // }
+  
   viewItem(item) {
     this.navCtrl.push(ItemDetailPage, {
       item: item,

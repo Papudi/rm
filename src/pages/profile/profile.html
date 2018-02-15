@@ -1,0 +1,54 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <div class="logo">
+        <img src="assets/imgs/rm-logo.png" width ="26px"height="23px" item-start/> Profile
+      </div>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div class="align-center">
+      <ion-list>
+        <h2>Profile</h2>
+        <ion-item>
+            <ion-input type="text" placeholder="Firstname" [(ngModel)]="myFirstname"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type="text" placeholder="Lastname" [(ngModel)]="myLastname"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type="email" placeholder="Email" [(ngModel)]="myEmail"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type="text" placeholder="Mobile Number" [(ngModel)]="myPhone"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>DOB</ion-label>
+          <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate" placeholder="dd/mm/yyy"></ion-datetime>
+        </ion-item>
+        <ion-item *ngIf=" gendertemp != 'Other'">
+          <ion-label floating>Gender </ion-label>
+          <ion-select [(ngModel)]="myGender">
+            <ion-option *ngFor="let gender of mastergender" value={{gender.name}}>{{gender.name}}</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <button ion-button round item-start (click)="saveProfile();">Submit</button>
+      <button ion-button item-end clear color="danger">Skip</button>
+    </div>
+    </ion-content>

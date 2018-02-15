@@ -15,6 +15,9 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+h2{
+    color: #488aff;
+}
 .pull-right {
     float: right;
 }
@@ -30,7 +33,51 @@ ion-content {
     max-width: 780px;
     // align-content: center;
 }
-
+.logo{
+    min-width: 26px;
+    float: left;
+}
+.platform-android .logo{
+    margin-left: -10px;
+}
+.platform-ios .logo {
+    position: absolute;
+    left: 50px;
+    top: 23px;
+  }
+  
+  
+.help-icon-container{
+    float: right;
+}
+.platform-ios .help-icon-container {
+    position: absolute;
+    right: 10px;
+    top: 30px;  
+  }
+  
+  
 h2 {
     font-size: 1.3em;
+}
+.align-center{
+    text-align: center;
+}
+
+.content-container{
+    width: 95%;
+    height: auto;
+    overflow: hidden;
+    margin: auto;
+    text-align: center;
+}
+.content-container p{
+    font-size: 14px;
+    line-height: 21px;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
 }

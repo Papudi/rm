@@ -4,8 +4,12 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      <img src="assets/imgs/logo_320x120.png" height="16px" /> Rewards Multiplier
-      <ion-icon class="help-icon" name="help-circle" (click)="showHelp()"></ion-icon>
+      <div class="logo">
+        <img src="assets/imgs/rm-logo.png" width ="26px"height="23px" item-start/> Rewards Multiplier
+      </div>
+      <div class="help-icon-container">
+        <ion-icon class="help-icon" name="help-circle" (click)="showHelp()"></ion-icon>
+      </div>
     </ion-title>
 
   </ion-navbar>
@@ -94,12 +98,12 @@
   <button class="next-btn" full (click)="myFunction1()">Next</button>
 </div>
 
-<div class="my-overlay" padding [hidden]="overlayHidden " id="help2" style="display:none;">
+<div class="my-overlay" padding [hidden]="overlayHidden " id="help2">
   <img class="help help2" src="../assets/imgs/help2.png" />
   <button class="next-btn" full (click)="myFunction2()">Next</button>
 </div>
 
-<div class="my-overlay" padding [hidden]="overlayHidden " id="help3" style="display:none;">
+<div class="my-overlay" padding [hidden]="overlayHidden " id="help3">
   <img class="help help3" src="../assets/imgs/help3.png" />
   <button class="next-btn" full (click)="myFunction3()">Close</button>
 </div>
