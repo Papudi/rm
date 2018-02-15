@@ -53,7 +53,7 @@ export class MyprogramsPage {
     });
   }
   deleteItem(item) {
-
+console.log(item);
     let confirm = this.alertCtrl.create({
       title: 'Delete Program?',
       message: 'Do you really want to Delete this Program?',
@@ -68,7 +68,7 @@ export class MyprogramsPage {
           text: 'Yes',
           handler: () => {
             this.myprograms.splice(this.myprograms.indexOf(item),1);
-            this.dataService.save(this.myprograms);
+            this.dataService.saveMyprograms(this.myprograms);
           }
         }
       ]

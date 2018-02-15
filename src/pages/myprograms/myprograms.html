@@ -28,7 +28,7 @@
     <ion-item *ngFor="let prog of myprograms">
       <div><span class="pull-right" (click)="viewProgramDetails(prog)">- <small class="grey">{{prog.category}}</small></span>{{prog.name}}</div>
       <div><p>{{prog.membershipid}}</p></div>
-      <ion-icon item-end name="trash" (click)="deleteItem(item)"></ion-icon>
+      <ion-icon item-end name="trash" (click)="deleteItem(prog)"></ion-icon>
       </ion-item>
   </ion-list>
 </ion-content>
