@@ -23,7 +23,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Data } from '../providers/data';
 import { AboutPage } from '../pages/about/about';
 import { RegistrationPage } from '../pages/registration/registration';
-import { ProfilePage } from '../pages/profile/profile';
+import { ProfileEditPage } from '../pages/profile-edit/profile-edit';
 import { ProfileDetailPage } from '../pages/profile-detail/profile-detail';
 // import { KnowyoumorePage } from '../pages/knowyoumore/knowyoumore';
 
@@ -42,7 +42,7 @@ import { ProfileDetailPage } from '../pages/profile-detail/profile-detail';
     ProgtransDetailPage,
     AboutPage,
     RegistrationPage,
-    ProfilePage,
+    ProfileEditPage,
     ProfileDetailPage
   ],
   imports: [
@@ -66,7 +66,7 @@ import { ProfileDetailPage } from '../pages/profile-detail/profile-detail';
     ProgtransDetailPage,
     AboutPage,
     RegistrationPage,
-    ProfilePage,
+    ProfileEditPage,
     ProfileDetailPage
   ],
   providers: [

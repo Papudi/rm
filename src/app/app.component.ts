@@ -10,7 +10,7 @@ import { TransactionsPage } from '../pages/transactions/transactions';
 import { MyprogramsPage } from '../pages/myprograms/myprograms';
 import { AboutPage } from '../pages/about/about';
 import { RegistrationPage } from '../pages/registration/registration';
-import { ProfilePage } from '../pages/profile/profile';
+import { ProfileEditPage } from '../pages/profile-edit/profile-edit';
 import { ProfileDetailPage } from '../pages/profile-detail/profile-detail';
 // import { KnowyoumorePage } from '../pages/knowyoumore/knowyoumore';
 // import { ProgramsPage } from '../pages/programs/programs';
@@ -35,8 +35,8 @@ export class MyApp {
       // { title: 'Programs', component: ProgramsPage },
       { title: 'My Transactions', component: TransactionsPage },
       { title: 'About', component: AboutPage },
-      { title: 'Registration', component: RegistrationPage },
-      { title: 'Profile', component: ProfilePage },
+      // { title: 'Registration', component: RegistrationPage },
+      // { title: 'Profile Edit', component: ProfileEditPage },
       { title: 'Profile Details', component: ProfileDetailPage }      
     ];
 

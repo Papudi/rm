@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ViewController } from 'ionic-angular/navigation/view-controller';
 import { Data } from '../../providers/data';
 import { Storage } from '@ionic/storage';
+import { ProfileDeatails } from '../profile-detail/profile-detail';
 import { HomePage } from '../home/home';
 /**
  * Generated class for the ProfilePage page.
@@ -13,10 +14,10 @@ import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
-  selector: 'page-profile',
-  templateUrl: 'profile.html',
+  selector: 'page-profile-edit',
+  templateUrl: 'profile-edit.html',
 })
-export class ProfilePage {
+export class ProfileEditPage {
   mastergender: any;
 
   myFirstname: string;
@@ -46,7 +47,7 @@ export class ProfilePage {
     
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilePage');
+    console.log('ionViewDidLoad ProfileEditPage');
   }
 
 
@@ -63,7 +64,8 @@ export class ProfilePage {
     }
     this.myProfile.push(profile);
     this.dataService.myprofile(this.myProfile);
-    this.navCtrl.push(HomePage);
+    // this.navCtrl.push(HomePage);
+    this.navCtrl.setRoot(ProfileDeatails);
   }
   getProfile() {
     this.storage.get('myFirstname').then((myFirstname) => {

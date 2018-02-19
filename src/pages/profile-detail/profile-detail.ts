@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ProfilePage } from '../profile/profile';
+import { ProfileEditPage } from '../profile-edit/profile-edit';
 import {} from '';
 
 /**
@@ -28,7 +28,7 @@ myGender: string;
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfileDetailPage');
-    this.myFirstname = this.navParams.get('item').myFirstname;
+    // this.myFirstname = this.navParams.get('item').myFirstname;
   }
 
 

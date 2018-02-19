@@ -57,8 +57,8 @@
         <div class="placeholder" id="alert-msg" *ngIf="!myprogs.length">
           <div>
             Looks like you have not added any Programs yet!
-            <br> Get started,
-            <b>add programs</b> earned now!
+            <br>get started 
+            <b>Add Programs</b> now!
           </div>
         </div>
         <ion-item *ngFor="let prog of myprogs" (click)="viewProg(prog)">{{prog.name}}
@@ -77,9 +77,9 @@
       <ion-list class="homeRecent">
         <div class="placeholder" id="alert-msg" *ngIf="!items">
           <div>
-            Looks like you have not added any Transactions yet!
-            <br> Get started,
-            <b>add reward points</b> earned now!
+            Hey, can you add some Transactions? It's looking pretty empty out here.
+            <br>
+            <b>Add Reward Points</b> now!
           </div>
         </div>
         <ion-item *ngFor="let item of items | slice:0:5" (click)="viewItem(item)">{{item.program}}
@@ -94,16 +94,16 @@
 <!-- The Intro Overlays -->
 
 <div class="my-overlay" padding [hidden]="overlayHidden " id="help1">
-  <img class="help help1" src="../assets/imgs/help1.png" />
+  <img class="help help1" src="assets/imgs/help1.png" />
   <button class="next-btn" full (click)="myFunction1()">Next</button>
 </div>
 
 <div class="my-overlay" padding [hidden]="overlayHidden " id="help2">
-  <img class="help help2" src="../assets/imgs/help2.png" />
+  <img class="help help2" src="assets/imgs/help2.png" />
   <button class="next-btn" full (click)="myFunction2()">Next</button>
 </div>
 
 <div class="my-overlay" padding [hidden]="overlayHidden " id="help3">
-  <img class="help help3" src="../assets/imgs/help3.png" />
+  <img class="help help3" src="assets/imgs/help3.png" />
   <button class="next-btn" full (click)="myFunction3()">Close</button>
 </div>

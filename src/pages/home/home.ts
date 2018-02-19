@@ -8,7 +8,7 @@ import { MyprogramsPage } from '../myprograms/myprograms';
 import { Data } from '../../providers/data';
 import { RegistrationPage } from '../registration/registration';
 import { AboutPage } from '../about/about';
-import { ProfilePage } from '../profile/profile';
+import { ProfileEditPage } from '../profile-edit/profile-edit';
 
 import 'rxjs/add/operator/filter';
 // import { KnowyoumorePage } from '../knowyoumore/knowyoumore';
@@ -117,7 +117,7 @@ myFunction3() {
   }
 
   gotoProfile(){
-    this.navCtrl.setRoot(ProfilePage);
+    this.navCtrl.setRoot(ProfileEditPage);
   }
 
   // gotoKnowyoumore(){
