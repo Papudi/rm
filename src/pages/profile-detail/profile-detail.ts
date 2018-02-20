@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProfileEditPage } from '../profile-edit/profile-edit';
-import {} from '';
+// import {} from '';
 
 /**
  * Generated class for the ProfileDetailPage page.
@@ -16,12 +16,12 @@ import {} from '';
   templateUrl: 'profile-detail.html',
 })
 export class ProfileDetailPage {
-myFirstname: string;
-myLastname: string;
-myEmail: string;
-myPhone: string;
-myDate: string;
-myGender: string;
+  myFirstname: string;
+  myLastname: string;
+  myEmail: string;
+  myPhone: string;
+  myDate: string;
+  myGender: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

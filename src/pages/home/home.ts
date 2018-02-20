@@ -9,6 +9,7 @@ import { Data } from '../../providers/data';
 import { RegistrationPage } from '../registration/registration';
 import { AboutPage } from '../about/about';
 import { ProfileEditPage } from '../profile-edit/profile-edit';
+import { ProfileDetailPage } from '../profile-detail/profile-detail';
 
 import 'rxjs/add/operator/filter';
 // import { KnowyoumorePage } from '../knowyoumore/knowyoumore';
@@ -117,7 +118,7 @@ myFunction3() {
   }
 
   gotoProfile(){
-    this.navCtrl.setRoot(ProfileEditPage);
+    this.navCtrl.setRoot(ProfileDetailPage);
   }
 
   // gotoKnowyoumore(){

@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ViewController } from 'ionic-angular/navigation/view-controller';
 import { Data } from '../../providers/data';
 import { Storage } from '@ionic/storage';
-import { ProfileDeatails } from '../profile-detail/profile-detail';
+import { ProfileDetailPage } from '../profile-detail/profile-detail';
 import { HomePage } from '../home/home';
 /**
  * Generated class for the ProfilePage page.
@@ -65,7 +65,7 @@ export class ProfileEditPage {
     this.myProfile.push(profile);
     this.dataService.myprofile(this.myProfile);
     // this.navCtrl.push(HomePage);
-    this.navCtrl.setRoot(ProfileDeatails);
+    this.navCtrl.setRoot(ProfileDetailPage);
   }
   getProfile() {
     this.storage.get('myFirstname').then((myFirstname) => {
