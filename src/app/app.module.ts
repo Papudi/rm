@@ -9,6 +9,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+// import { LoginPage } from '../pages/login/login';
 import { MyprogramsPage } from '../pages/myprograms/myprograms';
 import { ProgramAddPage } from '../pages/program-add/program-add';
 import { ProgramDetailPage } from '../pages/program-detail/program-detail';
@@ -20,11 +21,16 @@ import { ProgtransDetailPage } from '../pages/progtrans-detail/progtrans-detail'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { Data } from '../providers/data';
+
 import { AboutPage } from '../pages/about/about';
 import { RegistrationPage } from '../pages/registration/registration';
 import { ProfileEditPage } from '../pages/profile-edit/profile-edit';
 import { ProfileDetailPage } from '../pages/profile-detail/profile-detail';
+
+import { Data } from '../providers/data';
+import { AuthProvider } from '../providers/auth/auth';
+import { EventProvider } from '../providers/event/event';
+import { ProfileProvider } from '../providers/profile/profile';
 // import { KnowyoumorePage } from '../pages/knowyoumore/knowyoumore';
 
 @NgModule({
@@ -32,6 +38,7 @@ import { ProfileDetailPage } from '../pages/profile-detail/profile-detail';
     MyApp,
     HomePage,
     ListPage,
+    // LoginPage,
     MyprogramsPage,
     ProgramAddPage,
     ProgramDetailPage,
@@ -55,6 +62,7 @@ import { ProfileDetailPage } from '../pages/profile-detail/profile-detail';
   entryComponents: [
     MyApp,
     HomePage,
+    // LoginPage,
     ListPage,
     MyprogramsPage,
     ProgramAddPage,
@@ -73,7 +81,10 @@ import { ProfileDetailPage } from '../pages/profile-detail/profile-detail';
     StatusBar,
     SplashScreen,
     Data,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthProvider,
+    EventProvider,
+    ProfileProvider
   ]
 })
 export class AppModule { }
