@@ -24,6 +24,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { AboutPage } from '../pages/about/about';
 import { RegistrationPage } from '../pages/registration/registration';
+import { ProfilePage } from '../pages/profile/profile';
 import { ProfileEditPage } from '../pages/profile-edit/profile-edit';
 import { ProfileDetailPage } from '../pages/profile-detail/profile-detail';
 
@@ -38,6 +39,7 @@ import { ProfileProvider } from '../providers/profile/profile';
     MyApp,
     HomePage,
     ListPage,
+    // ProfilePage,
     // LoginPage,
     MyprogramsPage,
     ProgramAddPage,

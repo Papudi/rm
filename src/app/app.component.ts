@@ -12,6 +12,7 @@ import { TransactionsPage } from '../pages/transactions/transactions';
 import { MyprogramsPage } from '../pages/myprograms/myprograms';
 import { AboutPage } from '../pages/about/about';
 import { RegistrationPage } from '../pages/registration/registration';
+// import { ProfilePage } from '../pages/profile/profile';
 import { ProfileEditPage } from '../pages/profile-edit/profile-edit';
 import { ProfileDetailPage } from '../pages/profile-detail/profile-detail';
 import { LoginPage } from '../pages/login/login';
@@ -68,6 +69,7 @@ export class MyApp {
       // { title: 'Profile Edit', component: ProfileEditPage },
 
       { title: 'About', component: AboutPage }
+      
     ];
 
   }

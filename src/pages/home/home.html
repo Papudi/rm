@@ -5,13 +5,17 @@
     </button>
     <ion-title>
       <div class="logo">
-        <img src="assets/imgs/rm-logo.png" width ="26px"height="23px" item-start/> Rewards Multiplier
+        <img src="assets/imgs/rm-logo.png" width="26px" height="23px" item-start/> Rewards Multiplier
       </div>
       <div class="help-icon-container">
         <ion-icon class="help-icon" name="help-circle" (click)="showHelp()"></ion-icon>
       </div>
     </ion-title>
-
+    <ion-buttons end>
+      <button ion-button icon-only (click)="goToProfile()">
+        <ion-icon name="person"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -57,7 +61,7 @@
         <div class="placeholder" id="alert-msg" *ngIf="!myprogs.length">
           <div>
             Looks like you have not added any Programs yet!
-            <br>get started 
+            <br>get started
             <b>Add Programs</b> now!
           </div>
         </div>
